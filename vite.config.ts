@@ -4,7 +4,11 @@ import tailwindcss from '@tailwindcss/vite'
 import { VitePWA } from 'vite-plugin-pwa'
 
 // https://vite.dev/config/
+// GitHub Pages serves a project site from /<repo>/; native (Capacitor) builds use root.
+const base = process.env.GITHUB_PAGES === 'true' ? '/nelicardio/' : '/'
+
 export default defineConfig({
+  base,
   plugins: [
     react(),
     tailwindcss(),
