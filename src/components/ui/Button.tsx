@@ -28,7 +28,7 @@ export function Button({
     sm: 'px-3 py-1.5 text-xs font-bold rounded-lg',
     md: 'px-4 py-2 text-sm font-bold rounded-xl',
     lg: 'px-6 py-3 text-base font-bold rounded-2xl',
-    xl: 'px-8 py-4 text-lg font-bold rounded-3xl',
+    xl: 'px-8 py-4 text-lg font-bold rounded-2xl',
   };
 
   return (

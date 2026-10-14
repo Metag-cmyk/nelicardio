@@ -89,7 +89,7 @@ function AppContent() {
     >
       <Suspense fallback={
         <div className="flex flex-col items-center justify-center min-h-[40vh] space-y-6">
-          <div className="w-16 h-16 bg-medical-accent/10 rounded-3xl flex items-center justify-center heart-pulse shadow-xl shadow-medical-accent/20">
+          <div className="w-16 h-16 bg-medical-accent/10 rounded-2xl flex items-center justify-center heart-pulse shadow-sm shadow-medical-accent/20">
             <Heart className="w-8 h-8 text-medical-accent fill-medical-accent/20" />
           </div>
           <p className="text-[10px] font-black uppercase tracking-[0.5em] text-medical-accent animate-pulse">Syncing Clinical Data...</p>

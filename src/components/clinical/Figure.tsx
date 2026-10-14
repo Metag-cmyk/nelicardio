@@ -11,7 +11,7 @@ import { cn } from '../../lib/utils';
  */
 export function FigureCard({ figure, className }: { figure: Figure; className?: string }) {
   return (
-    <Card className={cn('overflow-hidden border-2 border-slate-100 rounded-[2rem] bg-white', className)}>
+    <Card className={cn('overflow-hidden border-2 border-slate-100 rounded-2xl bg-white', className)}>
       <div className="p-4 border-b border-slate-100 flex items-center justify-between gap-2">
         <h5 className="text-[11px] font-black uppercase tracking-wider text-slate-800">{figure.title}</h5>
         {figure.illustrative && (

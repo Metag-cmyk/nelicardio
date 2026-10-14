@@ -20,7 +20,7 @@ export function SegmentedControl({ options, activeId, onChange, className }: Seg
   const groupId = useId();
   return (
     <div className={cn(
-      "flex items-center gap-1 p-1 bg-slate-50/50 backdrop-blur-xl rounded-[2rem] border border-slate-200/40 w-full overflow-x-auto no-scrollbar", 
+      "flex items-center gap-1 p-1 bg-slate-50/50 backdrop-blur-xl rounded-2xl border border-slate-200/40 w-full overflow-x-auto no-scrollbar", 
       className
     )}>
       {options.map((opt) => {

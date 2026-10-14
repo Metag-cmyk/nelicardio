@@ -14,7 +14,7 @@ export function Card({ children, className, onClick, hoverable = false }: CardPr
       onClick={onClick}
       className={cn(
         "bg-white border border-medical-border rounded-2xl overflow-hidden",
-        hoverable && "transition-all duration-300 hover:shadow-lg hover:-translate-y-1 cursor-pointer",
+        hoverable && "transition-all duration-300 hover:shadow-sm hover:-translate-y-1 cursor-pointer",
         className
       )}
     >

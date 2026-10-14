@@ -213,8 +213,8 @@ const MeasurementStrip = memo(({ param }: { param: ImagingParameter }) => {
     <motion.div
       layout
       className={cn(
-        "bg-white border p-4 sm:p-5 md:p-6 rounded-2xl md:rounded-[2.5rem] flex flex-col group transition-all duration-300 relative overflow-hidden h-full",
-        isAbnormal ? "border-medical-accent/30 shadow-lg shadow-medical-accent/5" : "border-slate-200/60 hover:shadow-xl hover:border-slate-300/60"
+        "bg-white border p-4 sm:p-5 md:p-6 rounded-2xl md:rounded-2xl flex flex-col group transition-all duration-300 relative overflow-hidden h-full",
+        isAbnormal ? "border-medical-accent/30 shadow-sm shadow-medical-accent/5" : "border-slate-200/60 hover:shadow-sm hover:border-slate-300/60"
       )}
     >
       <div className={cn(
@@ -250,7 +250,7 @@ const MeasurementStrip = memo(({ param }: { param: ImagingParameter }) => {
                     className={cn(
                       "px-3 py-3 rounded-2xl text-[10px] font-black uppercase tracking-tight text-left transition-all border",
                       inputValue === tier.min.toString()
-                        ? "bg-white border-medical-accent text-medical-accent shadow-md translate-y-[-2px]"
+                        ? "bg-white border-medical-accent text-medical-accent shadow-sm translate-y-[-2px]"
                         : "bg-slate-50 border-slate-100 text-slate-400 hover:bg-white hover:border-slate-200"
                     )}
                  >

@@ -44,7 +44,7 @@ export default function LabsView() {
         subtitle="Precision biochemistry & acid-base analytics"
         badge="Biochemistry Command"
       >
-        <div className="bg-white p-4 rounded-3xl border border-slate-100 shadow-sm flex items-center gap-6">
+        <div className="bg-white p-4 rounded-2xl border border-slate-100 shadow-sm flex items-center gap-6">
            <div className="flex flex-col text-right">
               <span className="text-[9px] font-black text-slate-400 uppercase tracking-widest leading-none mb-1">eGFR (C-G)</span>
               <div className={cn("text-2xl font-black italic tracking-tighter leading-none transition-colors", gfrColor)}>
@@ -59,7 +59,7 @@ export default function LabsView() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8">
         {/* Left Column: Traditional Labs */}
         <div className="lg:col-span-4 space-y-4 md:space-y-6">
-          <Card className="p-5 sm:p-6 md:p-8 rounded-2xl md:rounded-[2.5rem] border-slate-100 shadow-sm bg-white overflow-hidden relative group">
+          <Card className="p-5 sm:p-6 md:p-8 rounded-2xl md:rounded-2xl border-slate-100 shadow-sm bg-white overflow-hidden relative group">
             <div className="absolute top-0 right-0 p-8 opacity-5 pointer-events-none">
                <FlaskConical className="w-24 h-24 text-medical-accent" />
             </div>
@@ -76,7 +76,7 @@ export default function LabsView() {
             </div>
           </Card>
 
-          <Card className="p-5 sm:p-6 md:p-8 rounded-2xl md:rounded-[2.5rem] border-slate-100 shadow-sm bg-white space-y-6 md:space-y-8">
+          <Card className="p-5 sm:p-6 md:p-8 rounded-2xl md:rounded-2xl border-slate-100 shadow-sm bg-white space-y-6 md:space-y-8">
               <div className="flex items-center gap-3">
                  <Activity className="w-5 h-5 text-medical-accent" />
                  <h3 className="text-xs md:text-sm font-black text-slate-900 uppercase tracking-wider italic">Renal & Lipids</h3>
@@ -90,7 +90,7 @@ export default function LabsView() {
 
         {/* Right Column: VBG/ABG Command Center */}
         <div className="lg:col-span-8 space-y-4 md:space-y-6">
-           <Card className="rounded-2xl md:rounded-[3rem] bg-slate-900 border-slate-800 shadow-2xl overflow-hidden min-h-64">
+           <Card className="rounded-2xl md:rounded-2xl bg-slate-900 border-slate-800 shadow-sm overflow-hidden min-h-64">
               <div className="p-5 sm:p-6 md:p-10 flex flex-col h-full gap-6 md:gap-8">
                  <div className="flex items-center justify-between gap-3">
                     <div className="flex items-center gap-3 md:gap-4">
@@ -104,7 +104,7 @@ export default function LabsView() {
                     </div>
                     {abgAnalysis && (
                        <Badge className={cn(
-                          "px-3 py-1.5 md:px-4 md:py-2 rounded-xl font-black uppercase tracking-wider italic text-[10px] md:text-[11px] shadow-lg shrink-0",
+                          "px-3 py-1.5 md:px-4 md:py-2 rounded-xl font-black uppercase tracking-wider italic text-[10px] md:text-[11px] shadow-sm shrink-0",
                           abgAnalysis.type === 'Acidemia' ? 'bg-rose-500 text-white' : 
                           abgAnalysis.type === 'Alkalemia' ? 'bg-sky-500 text-white' : 
                           'bg-emerald-500 text-white'
@@ -127,10 +127,10 @@ export default function LabsView() {
                           key={`${labs.ph}-${labs.pco2}-${labs.hco3}`}
                           initial={{ opacity: 0, y: 10 }}
                           animate={{ opacity: 1, y: 0 }}
-                          className="flex-1 bg-white/5 border border-white/10 rounded-2xl md:rounded-[2.5rem] p-5 sm:p-6 md:p-8 flex flex-col justify-center gap-4 text-center md:text-left group/analysis hover:bg-white/[0.07] transition-all duration-500"
+                          className="flex-1 bg-white/5 border border-white/10 rounded-2xl md:rounded-2xl p-5 sm:p-6 md:p-8 flex flex-col justify-center gap-4 text-center md:text-left group/analysis hover:bg-white/[0.07] transition-all duration-500"
                        >
                           <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6">
-                             <div className="shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-full bg-medical-accent/20 flex items-center justify-center border border-medical-accent/30 shadow-xl shadow-medical-accent/20">
+                             <div className="shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-full bg-medical-accent/20 flex items-center justify-center border border-medical-accent/30 shadow-sm shadow-medical-accent/20">
                                 <Zap className="w-6 h-6 md:w-8 md:h-8 text-medical-accent" />
                              </div>
                              <div className="flex-1 space-y-1.5 md:space-y-2">
@@ -138,7 +138,7 @@ export default function LabsView() {
                                 <p className="text-[10px] md:text-[11px] font-black text-medical-accent uppercase tracking-wider">{abgAnalysis.compensation || 'Evaluating Secondary Response...'}</p>
                              </div>
                              {anionGap !== null && (abgAnalysis.primary.includes('Acidosis') || abgAnalysis.isGap) && (
-                                <div className="shrink-0 px-5 py-3 md:px-6 md:py-4 bg-slate-800 rounded-2xl md:rounded-[1.8rem] border border-slate-700 text-center shadow-xl">
+                                <div className="shrink-0 px-5 py-3 md:px-6 md:py-4 bg-slate-800 rounded-2xl md:rounded-[1.8rem] border border-slate-700 text-center shadow-sm">
                                    <p className="text-[8px] md:text-[9px] font-black text-slate-400 uppercase tracking-wider mb-0.5">Anion Gap Analytics</p>
                                    <div className={cn("text-xl md:text-2xl font-black italic", anionGap > CLINICAL_NORMALS.anionGap ? "text-rose-400" : "text-emerald-400")}>{anionGap}</div>
                                    <div className="flex flex-col mt-0.5">
@@ -166,10 +166,10 @@ export default function LabsView() {
            </Card>
 
            {/* Clinical Interlock Widget */}
-           <div className="bg-medical-secondary p-5 sm:p-6 md:p-8 rounded-2xl md:rounded-[3rem] border border-slate-100 flex items-center justify-between group overflow-hidden relative shadow-sm">
+           <div className="bg-medical-secondary p-5 sm:p-6 md:p-8 rounded-2xl md:rounded-2xl border border-slate-100 flex items-center justify-between group overflow-hidden relative shadow-sm">
               <div className="absolute top-0 left-0 w-2 h-full bg-medical-accent" />
               <div className="flex items-center gap-4 sm:gap-6 relative z-10">
-                 <div className="w-12 h-12 md:w-16 md:h-16 bg-white rounded-2xl md:rounded-3xl flex items-center justify-center shadow-lg border border-slate-100 group-hover:rotate-6 transition-all duration-300 shrink-0">
+                 <div className="w-12 h-12 md:w-16 md:h-16 bg-white rounded-2xl md:rounded-2xl flex items-center justify-center shadow-sm border border-slate-100 group-hover:rotate-6 transition-all duration-300 shrink-0">
                     <AlertTriangle className="w-6 h-6 md:w-8 md:h-8 text-medical-accent" />
                  </div>
                  <div>

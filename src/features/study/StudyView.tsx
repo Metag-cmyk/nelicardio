@@ -127,7 +127,7 @@ export default function StudyView() {
           </div>
 
           {/* Actions */}
-          <Card className="p-5 md:p-6 bg-slate-900 text-white rounded-[2rem] shadow-2xl relative overflow-hidden">
+          <Card className="p-5 md:p-6 bg-slate-900 text-white rounded-2xl shadow-sm relative overflow-hidden">
             <div className="absolute top-0 right-0 w-52 h-52 bg-medical-accent/10 rounded-full -mr-24 -mt-24 blur-3xl" />
             <div className="relative z-10 space-y-4">
               <div className="flex items-center gap-3">
@@ -141,7 +141,7 @@ export default function StudyView() {
                 <button
                   onClick={() => start(bank.filter((q) => { const c = cards[q.id]; return c && isDue(c, now); }).map((q) => q.id))}
                   disabled={dueCount === 0}
-                  className={cn('inline-flex items-center gap-2 px-5 py-3 rounded-2xl text-[10px] font-black uppercase tracking-widest transition-all active:scale-95', dueCount === 0 ? 'bg-white/5 text-slate-500' : 'bg-medical-accent text-white shadow-lg shadow-medical-accent/30')}
+                  className={cn('inline-flex items-center gap-2 px-5 py-3 rounded-2xl text-[10px] font-black uppercase tracking-widest transition-all active:scale-95', dueCount === 0 ? 'bg-white/5 text-slate-500' : 'bg-medical-accent text-white shadow-sm shadow-medical-accent/30')}
                 >
                   <Play className="w-4 h-4" /> Review due ({dueCount})
                 </button>
@@ -157,7 +157,7 @@ export default function StudyView() {
           </Card>
 
           {/* Mastery */}
-          <Card className="p-5 md:p-6 bg-white border-2 border-slate-100 rounded-[2rem]">
+          <Card className="p-5 md:p-6 bg-white border-2 border-slate-100 rounded-2xl">
             <div className="flex items-center gap-2 mb-4">
               <Layers className="w-4 h-4 text-medical-accent" />
               <h3 className="text-[11px] font-black uppercase tracking-widest text-slate-400">Weakest topics</h3>
@@ -185,7 +185,7 @@ export default function StudyView() {
           </Card>
 
           {/* Cram by topic */}
-          <Card className="p-5 md:p-6 bg-white border-2 border-slate-100 rounded-[2rem]">
+          <Card className="p-5 md:p-6 bg-white border-2 border-slate-100 rounded-2xl">
             <div className="flex items-center gap-2 mb-4">
               <Target className="w-4 h-4 text-medical-accent" />
               <h3 className="text-[11px] font-black uppercase tracking-widest text-slate-400">Cram a topic</h3>
@@ -224,7 +224,7 @@ export default function StudyView() {
           </div>
 
           {!current ? (
-            <Card className="p-10 bg-white border-2 border-slate-100 rounded-[2rem] text-center space-y-3">
+            <Card className="p-10 bg-white border-2 border-slate-100 rounded-2xl text-center space-y-3">
               <CheckCircle2 className="w-10 h-10 text-emerald-500 mx-auto" />
               <h3 className="text-xl font-black uppercase italic tracking-tighter text-slate-900">Session complete</h3>
               <p className="prose-clinical mx-auto">Nice work — {queue.length} cards reviewed and rescheduled.</p>
@@ -233,7 +233,7 @@ export default function StudyView() {
               </button>
             </Card>
           ) : (
-            <Card className="p-5 md:p-8 bg-white border-2 border-slate-100 rounded-[2rem] space-y-6">
+            <Card className="p-5 md:p-8 bg-white border-2 border-slate-100 rounded-2xl space-y-6">
               <div className="flex items-center gap-2">
                 <Badge variant="primary" className="text-[8px] font-black">{QUESTION_TYPE_LABEL[current.type]}</Badge>
                 <span className="text-[9px] font-black uppercase tracking-wider text-slate-400">{TOPICS.find((t) => t.id === current.topicId)?.title ?? current.topicId}</span>

@@ -48,7 +48,7 @@ function SCORE2() {
       </div>
       <RiskHeatmap value={riskValue} thresholds={thresholds} />
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-        <Card className="p-5 sm:p-6 md:p-8 bg-slate-50 border border-slate-100 rounded-2xl md:rounded-[3rem] shadow-sm">
+        <Card className="p-5 sm:p-6 md:p-8 bg-slate-50 border border-slate-100 rounded-2xl md:rounded-2xl shadow-sm">
           <h4 className="text-[10px] md:text-[11px] font-black text-slate-400 uppercase tracking-wider md:tracking-[0.3em] mb-4 md:mb-6">Risk Region</h4>
           <div className="grid grid-cols-2 gap-2">
             {['Low', 'Moderate', 'High', 'Very High'].map((r) => (
@@ -57,7 +57,7 @@ function SCORE2() {
                 onClick={() => setRegion(r)}
                 className={cn(
                   'px-3 py-2.5 md:px-4 md:py-3 rounded-xl md:rounded-2xl text-[10px] md:text-xs font-black uppercase transition-all border min-h-[44px] active:scale-95',
-                  region === r ? 'bg-medical-accent border-transparent text-white shadow-md shadow-medical-accent/25' : 'bg-white border-slate-100 text-slate-400 hover:border-slate-200',
+                  region === r ? 'bg-medical-accent border-transparent text-white shadow-sm shadow-medical-accent/25' : 'bg-white border-slate-100 text-slate-400 hover:border-slate-200',
                 )}
               >
                 {r}
@@ -66,7 +66,7 @@ function SCORE2() {
           </div>
         </Card>
 
-        <Card className="p-5 sm:p-6 md:p-8 bg-slate-50 border border-slate-100 rounded-2xl md:rounded-[3rem] shadow-sm">
+        <Card className="p-5 sm:p-6 md:p-8 bg-slate-50 border border-slate-100 rounded-2xl md:rounded-2xl shadow-sm">
           <h4 className="text-[10px] md:text-[11px] font-black text-slate-400 uppercase tracking-wider md:tracking-[0.3em] mb-4 md:mb-6">Systolic BP (mmHg)</h4>
           <Input type="number" value={sbp} onChange={(e) => setSbp(e.target.value)} className="h-12 md:h-14 text-xl md:text-2xl font-black bg-white rounded-2xl" />
           <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mt-3">Non-HDL (derived): {nonHdl} mmol/L</p>
@@ -84,7 +84,7 @@ function Biochemistry() {
 
   return (
     <div className="space-y-12">
-      <div className="flex justify-between items-center bg-slate-50 p-6 rounded-[2.5rem] border border-slate-200/50">
+      <div className="flex justify-between items-center bg-slate-50 p-6 rounded-2xl border border-slate-200/50">
         <div className="flex items-center gap-4">
           <div className="w-10 h-10 bg-medical-accent/10 rounded-xl flex items-center justify-center"><Activity className="w-5 h-5 text-medical-accent" /></div>
           <div>
@@ -117,7 +117,7 @@ function Biochemistry() {
           </div>
         </Card>
 
-        <Card className="p-5 sm:p-6 md:p-10 bg-slate-900 text-white rounded-2xl md:rounded-[3.5rem] shadow-2xl relative overflow-hidden">
+        <Card className="p-5 sm:p-6 md:p-10 bg-slate-900 text-white rounded-2xl md:rounded-[3.5rem] shadow-sm relative overflow-hidden">
           <div className="absolute top-0 right-0 w-64 h-64 bg-medical-accent/10 rounded-full blur-[80px] -mr-32 -mt-32" />
           <div className="flex items-center gap-2.5 mb-6 md:mb-10"><Droplets className="w-5 h-5 text-medical-accent" /><h5 className="text-[10px] md:text-[11px] font-black uppercase tracking-wider text-white/50">Diagnostic Markers</h5></div>
           <div className="space-y-6 md:space-y-8 relative z-10">
@@ -154,7 +154,7 @@ export default function ClinicalCalculators() {
             onClick={() => setActiveTab(t)}
             className={cn(
               'px-5 py-3 md:px-8 md:py-4 rounded-full text-[10px] md:text-[11px] font-black uppercase tracking-wider md:tracking-[0.2em] transition-all whitespace-nowrap border-2 shadow-sm shrink-0 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-medical-accent/50',
-              activeTab === t ? 'bg-medical-accent border-transparent text-white scale-[1.02] shadow-md shadow-medical-accent/30' : 'bg-white border-slate-100 text-slate-400 hover:border-slate-200',
+              activeTab === t ? 'bg-medical-accent border-transparent text-white scale-[1.02] shadow-sm shadow-medical-accent/30' : 'bg-white border-slate-100 text-slate-400 hover:border-slate-200',
             )}
           >
             {t}

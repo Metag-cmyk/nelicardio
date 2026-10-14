@@ -107,7 +107,7 @@ function Scorer({ score, patient }: { score: ScoringSystem; patient: ReturnType<
       : 'emerald';
 
   return (
-    <Card className="p-5 sm:p-6 md:p-8 bg-white border-2 border-slate-100 rounded-2xl md:rounded-[2.5rem] shadow-xl relative overflow-hidden group">
+    <Card className="p-5 sm:p-6 md:p-8 bg-white border-2 border-slate-100 rounded-2xl md:rounded-2xl shadow-sm relative overflow-hidden group">
       <div className="flex justify-between items-start mb-6 md:mb-8">
         <div>
            <h5 className="text-xl md:text-2xl font-black text-slate-900 uppercase italic tracking-tighter leading-none mb-1">{score.name}</h5>
@@ -154,7 +154,7 @@ function Scorer({ score, patient }: { score: ScoringSystem; patient: ReturnType<
 
       {interpretation ? (
         <div className={cn(
-          "p-4 sm:p-6 rounded-xl md:rounded-[2rem] border-2 transition-all duration-500",
+          "p-4 sm:p-6 rounded-xl md:rounded-2xl border-2 transition-all duration-500",
           tone === 'rose' ? "bg-rose-50 border-rose-100 text-rose-700" :
           tone === 'amber' ? "bg-amber-50 border-amber-100 text-amber-700" :
           "bg-emerald-50 border-emerald-100 text-emerald-700"
@@ -169,7 +169,7 @@ function Scorer({ score, patient }: { score: ScoringSystem; patient: ReturnType<
            )}
         </div>
       ) : (
-        <div className="p-4 sm:p-6 rounded-xl md:rounded-[2rem] border-2 border-slate-200 bg-slate-50 text-slate-600">
+        <div className="p-4 sm:p-6 rounded-xl md:rounded-2xl border-2 border-slate-200 bg-slate-50 text-slate-600">
            <span className="text-[9px] md:text-[10px] font-black uppercase tracking-wider opacity-70">Reference thresholds (criteria-based score)</span>
            <div className="mt-3 space-y-2">
              {score.interpretation.map((row, i) => (
@@ -207,11 +207,11 @@ function GDMTSupport({ condition }: { condition: Condition }) {
 
   return (
     <Section title="GDMT Optimization Logic" icon={<TrendingUp className="w-5 h-5" />} color="text-emerald-500">
-       <Card className="p-5 sm:p-6 md:p-8 bg-slate-900 border border-emerald-500/30 rounded-2xl md:rounded-[3rem] shadow-2xl relative overflow-hidden">
+       <Card className="p-5 sm:p-6 md:p-8 bg-slate-900 border border-emerald-500/30 rounded-2xl md:rounded-2xl shadow-sm relative overflow-hidden">
           <div className="absolute top-0 right-0 w-40 h-40 bg-emerald-500/10 rounded-full -mr-20 -mt-20 blur-3xl animate-pulse" />
           
           <div className="flex items-center gap-3 sm:gap-4 mb-6 md:mb-8">
-             <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl md:rounded-2xl bg-emerald-500 flex items-center justify-center shadow-lg shadow-emerald-500/30 shrink-0">
+             <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl md:rounded-2xl bg-emerald-500 flex items-center justify-center shadow-sm shadow-emerald-500/30 shrink-0">
                 <ShieldCheck className="w-5 h-5 md:w-6 md:h-6 text-white" />
              </div>
              <div>
@@ -321,7 +321,7 @@ function ConditionDetail({
                   <div className="space-y-8">
                   <div className="grid grid-cols-1 xl:grid-cols-2 gap-8">
                      <Section title="Pathophysiology" icon={<Activity className="w-5 h-5" />} color="text-medical-accent">
-                        <Card className="p-8 bg-white border-2 border-slate-100/50 rounded-[2.5rem] shadow-xl relative overflow-hidden h-full group">
+                        <Card className="p-8 bg-white border-2 border-slate-100/50 rounded-2xl shadow-sm relative overflow-hidden h-full group">
                            <div className="absolute top-0 right-0 w-32 h-32 bg-medical-accent/5 rounded-full -mr-16 -mt-16 blur-2xl group-hover:bg-medical-accent/10 transition-colors" />
                            <p className="prose-clinical relative z-10">{condition.pathophysiology}</p>
                         </Card>
@@ -365,12 +365,12 @@ function ConditionDetail({
                      </Section>
                      <Section title="Imaging & Biomarkers Matrix" icon={<Scale className="w-5 h-5" />} color="text-sky-500">
                         <div className="space-y-6">
-                           <div className="flex p-1.5 bg-slate-900 rounded-[2rem] gap-1 shadow-lg">
+                           <div className="flex p-1.5 bg-slate-900 rounded-2xl gap-1 shadow-sm">
                               {(['EKG', 'Echo', 'Radiology'] as const).map((tab) => (
-                                 <button key={tab} onClick={() => setActiveImagingTab(tab)} className={cn("flex-1 py-3 rounded-full text-[10px] font-black uppercase tracking-[0.2em] transition-all outline-none focus-visible:ring-2 focus-visible:ring-white/50", activeImagingTab === tab ? "bg-white text-slate-900 shadow-xl" : "text-slate-400 hover:text-slate-200")}>{tab}</button>
+                                 <button key={tab} onClick={() => setActiveImagingTab(tab)} className={cn("flex-1 py-3 rounded-full text-[10px] font-black uppercase tracking-[0.2em] transition-all outline-none focus-visible:ring-2 focus-visible:ring-white/50", activeImagingTab === tab ? "bg-white text-slate-900 shadow-sm" : "text-slate-400 hover:text-slate-200")}>{tab}</button>
                               ))}
                            </div>
-                           <Card className="p-8 bg-white border-2 border-slate-100 rounded-[2.5rem] shadow-xl min-h-[240px]">
+                           <Card className="p-8 bg-white border-2 border-slate-100 rounded-2xl shadow-sm min-h-[240px]">
                               <div className="space-y-4">
                                  {(activeImagingTab === 'EKG' ? condition.ekgFindings : 
                                    activeImagingTab === 'Echo' ? condition.imaging?.echo :
@@ -393,7 +393,7 @@ function ConditionDetail({
                         <Section title="Interactive Instruments" icon={<Calculator className="w-5 h-5" />} color="text-medical-accent">
                            <div className="space-y-8">
                               {wiredInstruments.map((instrument) => (
-                                 <Card key={instrument.id} className="p-5 sm:p-6 md:p-8 bg-white border-2 border-slate-100 rounded-[2.5rem] shadow-sm">
+                                 <Card key={instrument.id} className="p-5 sm:p-6 md:p-8 bg-white border-2 border-slate-100 rounded-2xl shadow-sm">
                                     <InstrumentPanel instrument={instrument} />
                                  </Card>
                               ))}
@@ -417,7 +417,7 @@ function ConditionDetail({
                            {condition.clinicalTools.imaging && (
                               <Section title="Severity Thresholds" icon={<Activity className="w-5 h-5" />} color="text-sky-500">
                                  {condition.clinicalTools.imaging.map((matrix, mi) => (
-                                    <Card key={mi} className="overflow-hidden border-2 border-slate-100 rounded-[2.5rem] bg-white shadow-xl">
+                                    <Card key={mi} className="overflow-hidden border-2 border-slate-100 rounded-2xl bg-white shadow-sm">
                                        <div className="p-6 bg-slate-900 text-white flex justify-between items-center"><h5 className="font-black uppercase italic tracking-tighter text-lg">{matrix.title}</h5></div>
                                        <div className="overflow-x-auto"><table className="w-full text-left"><thead><tr className="bg-slate-50 border-b border-slate-100"><th className="p-6 text-[10px] font-black uppercase tracking-widest text-slate-400 italic">Metric</th>{matrix.headers.map((h, hi) => (<th key={hi} className="p-6 text-[10px] font-black uppercase tracking-widest text-center italic text-slate-600">{h}</th>))}</tr></thead><tbody>{matrix.rows.map((row, ri) => (<tr key={ri} className="border-b border-slate-50 last:border-0 hover:bg-slate-50/50 transition-colors"><td className="p-6"><span className="text-[11px] font-black text-slate-800 uppercase tracking-tight">{row.metric}</span></td>{row.values.map((v, vi) => (<td key={vi} className="p-6 text-center"><span className="text-[11px] font-black text-medical-accent uppercase italic">{v}</span></td>))}</tr>))}</tbody></table></div>
                                     </Card>
@@ -426,7 +426,7 @@ function ConditionDetail({
                            )}
                         </div>
                      ) : (
-                        <div className="p-20 bg-white border-2 border-dashed border-slate-200 rounded-[3rem] text-center space-y-4"><div className="w-20 h-20 bg-slate-50 rounded-full flex items-center justify-center mx-auto"><Calculator className="w-10 h-10 text-slate-300" /></div><div className="space-y-1"><h4 className="text-xl font-black text-slate-900 uppercase tracking-tighter italic">No Specialized Tools</h4></div></div>
+                        <div className="p-20 bg-white border-2 border-dashed border-slate-200 rounded-2xl text-center space-y-4"><div className="w-20 h-20 bg-slate-50 rounded-full flex items-center justify-center mx-auto"><Calculator className="w-10 h-10 text-slate-300" /></div><div className="space-y-1"><h4 className="text-xl font-black text-slate-900 uppercase tracking-tighter italic">No Specialized Tools</h4></div></div>
                      )}
                   </div>
                )}
@@ -487,7 +487,7 @@ function ConditionDetail({
                         </Section>
 
                         <Section title="Clinical Wisdom" icon={<Info className="w-5 h-5" />} color="text-teal-500">
-                           <div className="p-8 bg-teal-50 border border-teal-100 rounded-[2.5rem] relative overflow-hidden group shadow-xl h-full"><div className="absolute top-0 right-0 w-40 h-40 bg-teal-500/10 rounded-full -mr-20 -mt-20 blur-2xl transition-all duration-700" /><div className="space-y-6 relative z-10">{condition.pearls.map((p, i) => (<div key={i} className="flex gap-4 items-start"><div className="w-1.5 h-6 bg-teal-400 rounded-full shrink-0" /><p className="text-[12px] font-black italic text-teal-800 leading-relaxed uppercase tracking-tight">"{p}"</p></div>))}</div></div>
+                           <div className="p-8 bg-teal-50 border border-teal-100 rounded-2xl relative overflow-hidden group shadow-sm h-full"><div className="absolute top-0 right-0 w-40 h-40 bg-teal-500/10 rounded-full -mr-20 -mt-20 blur-2xl transition-all duration-700" /><div className="space-y-6 relative z-10">{condition.pearls.map((p, i) => (<div key={i} className="flex gap-4 items-start"><div className="w-1.5 h-6 bg-teal-400 rounded-full shrink-0" /><p className="text-[12px] font-black italic text-teal-800 leading-relaxed uppercase tracking-tight">"{p}"</p></div>))}</div></div>
                         </Section>
                      </div>
                   </div>
@@ -557,7 +557,7 @@ export default function ConditionList({ selectedId, onSelect, onClose }: Conditi
              placeholder="Search Conditions / Guidelines..." 
              value={search}
              onChange={(e) => setSearch(e.target.value)}
-             className="w-full bg-white border-2 border-slate-100 rounded-full py-3.5 md:py-4 pl-11 md:pl-14 pr-6 md:pr-8 text-sm font-bold uppercase tracking-wider text-slate-900 focus:outline-none focus:border-medical-accent focus:shadow-xl focus:shadow-medical-accent/10 transition-all placeholder:text-slate-300"
+             className="w-full bg-white border-2 border-slate-100 rounded-full py-3.5 md:py-4 pl-11 md:pl-14 pr-6 md:pr-8 text-sm font-bold uppercase tracking-wider text-slate-900 focus:outline-none focus:border-medical-accent focus:shadow-sm focus:shadow-medical-accent/10 transition-all placeholder:text-slate-300"
            />
         </div>
       </PageHeader>
@@ -582,7 +582,7 @@ export default function ConditionList({ selectedId, onSelect, onClose }: Conditi
                 className={cn(
                   "px-4 py-2.5 md:px-5 md:py-2.5 rounded-full text-[10px] md:text-xs font-black uppercase tracking-wider transition-all border-2 shrink-0 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-medical-accent/50",
                   activeCategory === cat.id 
-                    ? "bg-medical-accent border-medical-accent text-white shadow-md shadow-medical-accent/25 scale-[1.02]" 
+                    ? "bg-medical-accent border-medical-accent text-white shadow-sm shadow-medical-accent/25 scale-[1.02]" 
                     : "bg-white border-slate-100 text-slate-400 hover:border-medical-accent/30 hover:text-slate-600"
                 )}
               >
@@ -597,9 +597,9 @@ export default function ConditionList({ selectedId, onSelect, onClose }: Conditi
                 key={condition.id}
                 onClick={() => onSelect(condition.id)}
                 className={cn(
-                  "group p-5 md:p-5 bg-white border-2 transition-all duration-200 cursor-pointer rounded-2xl md:rounded-[1.75rem] relative overflow-hidden flex flex-col h-full active:scale-[0.99]",
+                  "group p-5 md:p-5 bg-white border-2 transition-all duration-200 cursor-pointer rounded-2xl md:rounded-2xl relative overflow-hidden flex flex-col h-full active:scale-[0.99]",
                   selectedId === condition.id 
-                    ? "border-medical-accent bg-slate-50 shadow-xl" 
+                    ? "border-medical-accent bg-slate-50 shadow-sm" 
                     : condition.priority === 'Critical'
                       ? "border-rose-100 hover:border-rose-300 shadow-sm"
                       : "border-slate-100 hover:border-medical-accent/40"
@@ -632,7 +632,7 @@ export default function ConditionList({ selectedId, onSelect, onClose }: Conditi
         {/* Right: detail pane (desktop master–detail) */}
         <div className="hidden lg:block">
           <div className="sticky top-6">
-            <Card className="flex flex-col h-[calc(100vh-9rem)] overflow-hidden border-2 border-slate-100 rounded-[2.5rem] bg-medical-surface shadow-xl">
+            <Card className="flex flex-col h-[calc(100vh-9rem)] overflow-hidden border-2 border-slate-100 rounded-2xl bg-medical-surface shadow-sm">
               {activeCondition ? (
                 <ConditionDetail
                   key={activeCondition.id}
@@ -663,7 +663,7 @@ export default function ConditionList({ selectedId, onSelect, onClose }: Conditi
                animate={{ y: 0 }}
                exit={{ y: "100%" }}
                transition={{ type: "spring", damping: 25, stiffness: 200 }}
-               className="bg-medical-surface w-full h-[92dvh] rounded-t-[2rem] shadow-2xl overflow-hidden flex flex-col border border-white/20 overscroll-contain pb-[env(safe-area-inset-bottom,0px)]"
+               className="bg-medical-surface w-full h-[92dvh] rounded-t-[2rem] shadow-sm overflow-hidden flex flex-col border border-white/20 overscroll-contain pb-[env(safe-area-inset-bottom,0px)]"
             >
                <div className="w-12 h-1.5 bg-slate-300 rounded-full mx-auto mt-3 mb-1 shrink-0" />
                <ConditionDetail

@@ -33,7 +33,7 @@ function TopicCard({ topic, active, onClick }: { topic: TopicCoverage; active: b
       onClick={onClick}
       className={cn(
         'p-4 md:p-5 bg-white border-2 transition-all cursor-pointer rounded-2xl flex flex-col h-full active:scale-[0.99]',
-        active ? 'border-medical-accent shadow-lg' : cn(STATUS_STYLE[topic.status].border, 'hover:shadow-md'),
+        active ? 'border-medical-accent shadow-sm' : cn(STATUS_STYLE[topic.status].border, 'hover:shadow-sm'),
       )}
     >
       <div className="flex items-start justify-between gap-2 mb-3">
@@ -56,7 +56,7 @@ function TopicCard({ topic, active, onClick }: { topic: TopicCoverage; active: b
 
 function TopicDetail({ topic }: { topic: TopicCoverage }) {
   return (
-    <Card className={cn('p-5 md:p-6 bg-white border-2 rounded-[2rem] space-y-4', STATUS_STYLE[topic.status].border)}>
+    <Card className={cn('p-5 md:p-6 bg-white border-2 rounded-2xl space-y-4', STATUS_STYLE[topic.status].border)}>
       <div className="flex items-start justify-between gap-3">
         <div>
           <h3 className="text-lg font-black text-slate-900 uppercase italic tracking-tighter leading-tight">{topic.title}</h3>
@@ -151,7 +151,7 @@ export default function CoverageView() {
 
       {/* Summary */}
       <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] gap-4 md:gap-6">
-        <Card className="p-6 md:p-8 bg-medical-accent text-white rounded-[2rem] shadow-2xl relative overflow-hidden">
+        <Card className="p-6 md:p-8 bg-medical-accent text-white rounded-2xl shadow-sm relative overflow-hidden">
           <div className="absolute top-0 right-0 w-48 h-48 bg-white/10 rounded-full -mr-24 -mt-24 blur-3xl" />
           <p className="text-[10px] font-black uppercase tracking-[0.3em] text-white/70 mb-2">Exam readiness</p>
           <div className="text-6xl md:text-7xl font-black italic tracking-tighter leading-none tabular-num">{report.readiness}<span className="text-3xl">%</span></div>
@@ -162,7 +162,7 @@ export default function CoverageView() {
           </div>
         </Card>
 
-        <Card className="p-5 md:p-6 bg-white border-2 border-slate-100 rounded-[2rem]">
+        <Card className="p-5 md:p-6 bg-white border-2 border-slate-100 rounded-2xl">
           <div className="flex items-center gap-2 mb-4">
             <Target className="w-4 h-4 text-medical-accent" />
             <h3 className="text-[11px] font-black uppercase tracking-widest text-slate-400">Coverage by status</h3>
@@ -200,7 +200,7 @@ export default function CoverageView() {
           {selectedTopic ? (
             <TopicDetail topic={selectedTopic} />
           ) : (
-            <Card className="p-5 md:p-6 bg-white border-2 border-slate-100 rounded-[2rem]">
+            <Card className="p-5 md:p-6 bg-white border-2 border-slate-100 rounded-2xl">
               <div className="flex items-center gap-2 mb-4">
                 <Layers className="w-4 h-4 text-medical-accent" />
                 <h3 className="text-[11px] font-black uppercase tracking-widest text-slate-400">Top gaps (by weight)</h3>

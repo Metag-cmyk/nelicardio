@@ -1580,6 +1580,24 @@ wide screens. Changes for desktop comfort:
 Master–detail views (Diagnose, Exam, Drugs, Guidelines) already split into two panes at `lg`, so the
 wider container lets the detail pane use the extra space.
 
+---
+
+## 50. Flatter, denser visual pass
+
+Verification: `tsc` clean, `npm test` 204 passing, `npm run lint` 0 problems, `npm run build` green.
+
+Rounded corners and shadows were reduced across the UI for a flatter, denser, more desktop-appropriate
+look:
+
+| Token | Before | After |
+|---|---|---|
+| Card radius | `rounded-[1.75rem]` … `rounded-[3rem]`, `rounded-3xl` (28–48 px) | `rounded-2xl` (16 px) — 81 occurrences |
+| Elevation | `shadow-2xl` / `shadow-xl` / `shadow-lg` / `shadow-md` | `shadow-sm` — 58 occurrences |
+| `.glass-card` | translucent + heavy blur + huge shadow | solid white, hairline border, `shadow-sm`, no blur |
+| `.btn-primary` | `rounded-2xl`, `px-6 py-3` | `rounded-xl`, `px-5 py-2.5`, `shadow-sm` |
+| Sidebar | `p-8`, `py-3.5` rows, transl-x on active | `p-6`, `py-2.5` rows, flat active pill |
+
+
 
 
 

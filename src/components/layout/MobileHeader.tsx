@@ -17,7 +17,7 @@ export function MobileHeader({ isScrolled }: MobileHeaderProps) {
     )}>
       <div className="flex items-center justify-between gap-3">
         <div className="flex items-center gap-2.5 min-w-0">
-          <div className="w-9 h-9 bg-medical-accent rounded-xl flex items-center justify-center shadow-lg shadow-medical-accent/25 heart-pulse shrink-0">
+          <div className="w-9 h-9 bg-medical-accent rounded-xl flex items-center justify-center shadow-sm shadow-medical-accent/25 heart-pulse shrink-0">
             <Heart className="w-5 h-5 text-white fill-white/20" />
           </div>
           <div className="flex flex-col min-w-0">

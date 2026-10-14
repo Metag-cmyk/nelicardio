@@ -89,13 +89,13 @@ function ConditionBlock({ condition }: { condition: Condition }) {
         </button>
       </div>
 
-      <Card className="p-5 bg-white border-2 border-slate-100 rounded-[1.75rem] space-y-4">
+      <Card className="p-5 bg-white border-2 border-slate-100 rounded-2xl space-y-4">
         <p className="prose-clinical">{condition.summary}</p>
         {condition.pathophysiology && <p className="prose-clinical text-slate-500">{condition.pathophysiology}</p>}
       </Card>
 
       {condition.pathogenesis && condition.pathogenesis.length > 0 && (
-        <Card className="p-5 bg-indigo-50/40 border-2 border-indigo-100 rounded-[1.75rem] space-y-3">
+        <Card className="p-5 bg-indigo-50/40 border-2 border-indigo-100 rounded-2xl space-y-3">
           <h5 className="text-[10px] font-black uppercase tracking-wider text-indigo-600">Патогенеза · Pathogenesis (стъпки)</h5>
           <ol className="space-y-2">
             {condition.pathogenesis.map((s, i) => (
@@ -111,7 +111,7 @@ function ConditionBlock({ condition }: { condition: Condition }) {
         </Card>
       )}
 
-      <Card className="p-5 bg-white border-2 border-slate-100 rounded-[1.75rem] space-y-3">
+      <Card className="p-5 bg-white border-2 border-slate-100 rounded-2xl space-y-3">
         <h5 className="text-[10px] font-black uppercase tracking-wider text-medical-accent">Клиника · Clinic</h5>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
@@ -128,7 +128,7 @@ function ConditionBlock({ condition }: { condition: Condition }) {
       </Card>
 
       {condition.labDeviations && condition.labDeviations.length > 0 && (
-        <Card className="p-5 bg-white border-2 border-slate-100 rounded-[1.75rem] space-y-2">
+        <Card className="p-5 bg-white border-2 border-slate-100 rounded-2xl space-y-2">
           <h5 className="text-[10px] font-black uppercase tracking-wider text-amber-600">Лаборатория · Laboratory</h5>
           <ul className="space-y-1.5">
             {condition.labDeviations.map((l, i) => (
@@ -142,37 +142,37 @@ function ConditionBlock({ condition }: { condition: Condition }) {
       )}
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
-        <Card className="p-5 bg-white border-2 border-slate-100 rounded-[1.75rem] space-y-3">
+        <Card className="p-5 bg-white border-2 border-slate-100 rounded-2xl space-y-3">
           <h5 className="text-[10px] font-black uppercase tracking-wider text-indigo-500">Етиология · Etiology</h5>
           <Bullets items={condition.etiology} />
         </Card>
-        <Card className="p-5 bg-white border-2 border-slate-100 rounded-[1.75rem] space-y-3">
+        <Card className="p-5 bg-white border-2 border-slate-100 rounded-2xl space-y-3">
           <h5 className="text-[10px] font-black uppercase tracking-wider text-medical-accent">Диагностични критерии · Diagnostic criteria</h5>
           <Bullets items={condition.diagnosticCriteria} />
         </Card>
-        <Card className="p-5 bg-white border-2 border-slate-100 rounded-[1.75rem] space-y-3">
+        <Card className="p-5 bg-white border-2 border-slate-100 rounded-2xl space-y-3">
           <h5 className="text-[10px] font-black uppercase tracking-wider text-rose-500">ЕКГ · ECG</h5>
           <Bullets items={condition.ekgFindings} />
         </Card>
-        <Card className="p-5 bg-white border-2 border-slate-100 rounded-[1.75rem] space-y-3">
+        <Card className="p-5 bg-white border-2 border-slate-100 rounded-2xl space-y-3">
           <h5 className="text-[10px] font-black uppercase tracking-wider text-sky-500">Образна диагностика · Imaging</h5>
           <Bullets items={imaging} />
         </Card>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
-        <Card className="p-5 bg-indigo-50/50 border-2 border-indigo-100/60 rounded-[1.75rem] space-y-3">
+        <Card className="p-5 bg-indigo-50/50 border-2 border-indigo-100/60 rounded-2xl space-y-3">
           <h5 className="text-[10px] font-black uppercase tracking-wider text-indigo-600">Лечение — първа линия · First-line</h5>
           <Bullets items={condition.management.primary} />
         </Card>
-        <Card className="p-5 bg-white border-2 border-slate-100 rounded-[1.75rem] space-y-3">
+        <Card className="p-5 bg-white border-2 border-slate-100 rounded-2xl space-y-3">
           <h5 className="text-[10px] font-black uppercase tracking-wider text-slate-500">Лечение — допълнително · Additional</h5>
           <Bullets items={condition.management.secondary} />
         </Card>
       </div>
 
       {treatmentRationale[condition.id] && treatmentRationale[condition.id].length > 0 && (
-        <Card className="p-5 bg-indigo-50/40 border-2 border-indigo-100 rounded-[1.75rem] space-y-3">
+        <Card className="p-5 bg-indigo-50/40 border-2 border-indigo-100 rounded-2xl space-y-3">
           <h5 className="text-[10px] font-black uppercase tracking-wider text-indigo-600">Механистична обосновка на лечението · Treatment rationale</h5>
           <Bullets items={treatmentRationale[condition.id]} />
         </Card>
@@ -383,7 +383,7 @@ function ExamNote({ topic, progress, onToggleStudied, onConfidence, onSelect, on
       <div className="flex-1 overflow-y-auto p-4 sm:p-6 md:p-8 space-y-8 no-scrollbar">
         <section data-toc="orientation">
           <Heading bg="Ориентация" en="Orientation" icon={<Info className="w-5 h-5" />} />
-          <Card className="p-5 bg-white border-2 border-slate-100 rounded-[1.75rem]">
+          <Card className="p-5 bg-white border-2 border-slate-100 rounded-2xl">
             <p className="prose-clinical">{topic.orientation}</p>
           </Card>
         </section>
@@ -391,7 +391,7 @@ function ExamNote({ topic, progress, onToggleStudied, onConfidence, onSelect, on
         {reqStatuses.length > 0 && (
           <section data-toc="plan">
             <Heading bg="План на изпитния отговор" en="Answer outline" icon={<ListChecks className="w-5 h-5" />} color="text-slate-500" />
-            <Card className="p-5 bg-white border-2 border-slate-100 rounded-[1.75rem]">
+            <Card className="p-5 bg-white border-2 border-slate-100 rounded-2xl">
               <ol className="space-y-2">
                 {reqStatuses.map((r, i) => (
                   <li key={r.key} className="flex items-center gap-3">
@@ -410,7 +410,7 @@ function ExamNote({ topic, progress, onToggleStudied, onConfidence, onSelect, on
             <Heading bg="Структура на изпитния отговор" en="Exam answer" icon={<BookOpen className="w-5 h-5" />} color="text-indigo-500" />
             <div className="space-y-4">
               {authored.map((s) => (
-                <Card key={s.key} className="p-5 bg-white border-2 border-slate-100 rounded-[1.75rem] space-y-2">
+                <Card key={s.key} className="p-5 bg-white border-2 border-slate-100 rounded-2xl space-y-2">
                   <h5 className="text-[10px] font-black uppercase tracking-wider text-indigo-500">{requirementLabelBg(s.key)}</h5>
                   <p className="prose-clinical whitespace-pre-line">{s.body}</p>
                 </Card>
@@ -420,7 +420,7 @@ function ExamNote({ topic, progress, onToggleStudied, onConfidence, onSelect, on
         )}
 
         {!hasAnything && (
-          <Card className="p-8 bg-white border-2 border-dashed border-slate-200 rounded-[1.75rem] text-center">
+          <Card className="p-8 bg-white border-2 border-dashed border-slate-200 rounded-2xl text-center">
             <p className="prose-clinical mx-auto">Няма свързано съдържание за този топик.</p>
           </Card>
         )}
@@ -439,13 +439,13 @@ function ExamNote({ topic, progress, onToggleStudied, onConfidence, onSelect, on
             <Heading bg="Епидемиология и прогноза" en="Epidemiology & prognosis" icon={<Activity className="w-5 h-5" />} color="text-sky-500" />
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
               {epi.length > 0 && (
-                <Card className="p-5 bg-white border-2 border-slate-100 rounded-[1.75rem] space-y-3">
+                <Card className="p-5 bg-white border-2 border-slate-100 rounded-2xl space-y-3">
                   <h5 className="text-[10px] font-black uppercase tracking-wider text-sky-500">Епидемиология</h5>
                   <Bullets items={epi} />
                 </Card>
               )}
               {progn.length > 0 && (
-                <Card className="p-5 bg-white border-2 border-slate-100 rounded-[1.75rem] space-y-3">
+                <Card className="p-5 bg-white border-2 border-slate-100 rounded-2xl space-y-3">
                   <h5 className="text-[10px] font-black uppercase tracking-wider text-sky-500">Прогноза</h5>
                   <Bullets items={progn} />
                 </Card>
@@ -457,7 +457,7 @@ function ExamNote({ topic, progress, onToggleStudied, onConfidence, onSelect, on
         {numbers.length > 0 && (
           <section data-toc="numbers">
             <Heading bg="Ключови числа" en="Key numbers" icon={<Calculator className="w-5 h-5" />} color="text-amber-500" />
-            <Card className="p-5 bg-white border-2 border-slate-100 rounded-[1.75rem]">
+            <Card className="p-5 bg-white border-2 border-slate-100 rounded-2xl">
               <ul className="space-y-2">
                 {numbers.map((n, i) => (
                   <li key={i} className="flex flex-wrap items-baseline gap-x-2 text-[13px]">
@@ -505,7 +505,7 @@ function ExamNote({ topic, progress, onToggleStudied, onConfidence, onSelect, on
                 if (gs.length === 0) return null;
                 const rows = gs.flatMap((g) => g.recommendations.slice(0, 5).map((r) => ({ g, r })));
                 return (
-                  <Card key={soc} className="p-5 bg-white border-2 border-slate-100 rounded-[1.75rem] space-y-3">
+                  <Card key={soc} className="p-5 bg-white border-2 border-slate-100 rounded-2xl space-y-3">
                     <h5 className="text-[10px] font-black uppercase tracking-wider text-indigo-600">{soc}</h5>
                     <ul className="space-y-2">
                       {rows.map(({ g, r }, i) => {
@@ -550,7 +550,7 @@ function ExamNote({ topic, progress, onToggleStudied, onConfidence, onSelect, on
             <Heading bg="Калкулатори" en="Calculators" icon={<Calculator className="w-5 h-5" />} color="text-sky-500" />
             <div className="space-y-6">
               {instruments.map((instrument) => (
-                <Card key={instrument.id} className="p-5 bg-white border-2 border-slate-100 rounded-[2rem] shadow-sm">
+                <Card key={instrument.id} className="p-5 bg-white border-2 border-slate-100 rounded-2xl shadow-sm">
                   <InstrumentPanel instrument={instrument} />
                 </Card>
               ))}
@@ -570,14 +570,14 @@ function ExamNote({ topic, progress, onToggleStudied, onConfidence, onSelect, on
         {comp.length > 0 && (
           <section data-toc="complications">
             <Heading bg="Усложнения" en="Complications" icon={<AlertTriangle className="w-5 h-5" />} color="text-rose-500" />
-            <Card className="p-5 bg-white border-2 border-slate-100 rounded-[1.75rem]"><Bullets items={comp} /></Card>
+            <Card className="p-5 bg-white border-2 border-slate-100 rounded-2xl"><Bullets items={comp} /></Card>
           </section>
         )}
 
         {redFlags.length > 0 && (
           <section data-toc="red">
             <Heading bg="Червени флагове" en="Red flags" icon={<AlertTriangle className="w-5 h-5" />} color="text-rose-500" />
-            <Card className="p-5 bg-rose-50 border-2 border-rose-100 rounded-[1.75rem]"><Bullets items={redFlags} /></Card>
+            <Card className="p-5 bg-rose-50 border-2 border-rose-100 rounded-2xl"><Bullets items={redFlags} /></Card>
           </section>
         )}
 
@@ -595,7 +595,7 @@ function ExamNote({ topic, progress, onToggleStudied, onConfidence, onSelect, on
         {traps.length > 0 && (
           <section data-toc="traps">
             <Heading bg="Капани на изпита" en="Exam traps" icon={<AlertTriangle className="w-5 h-5" />} color="text-amber-600" />
-            <Card className="p-5 bg-amber-50 border-2 border-amber-100 rounded-[1.75rem]"><Bullets items={traps} /></Card>
+            <Card className="p-5 bg-amber-50 border-2 border-amber-100 rounded-2xl"><Bullets items={traps} /></Card>
           </section>
         )}
 
@@ -615,7 +615,7 @@ function ExamNote({ topic, progress, onToggleStudied, onConfidence, onSelect, on
         {pearls.length > 0 && (
           <section data-toc="pearls">
             <Heading bg="Клинични съвети" en="Clinical pearls" icon={<Activity className="w-5 h-5" />} color="text-teal-500" />
-            <Card className="p-5 bg-teal-50 border-2 border-teal-100 rounded-[1.75rem] space-y-3">
+            <Card className="p-5 bg-teal-50 border-2 border-teal-100 rounded-2xl space-y-3">
               {pearls.map((p, i) => (
                 <div key={i} className="flex gap-3 items-start">
                   <span className="w-1.5 h-5 bg-teal-400 rounded-full shrink-0" />
@@ -786,7 +786,7 @@ export default function ExamView({ selectedId, onSelect, onClose }: ExamViewProp
                       onClick={() => onSelect(topic.id)}
                       className={cn(
                         'p-4 bg-white border-2 rounded-2xl cursor-pointer transition-all active:scale-[0.99] flex items-start gap-3',
-                        selectedId === topic.id ? 'border-medical-accent bg-slate-50 shadow-md' : 'border-slate-100 hover:border-medical-accent/40',
+                        selectedId === topic.id ? 'border-medical-accent bg-slate-50 shadow-sm' : 'border-slate-100 hover:border-medical-accent/40',
                       )}
                     >
                       <span className="text-[10px] font-black text-medical-accent uppercase tracking-wider shrink-0 mt-0.5">{topic.code}</span>
@@ -805,7 +805,7 @@ export default function ExamView({ selectedId, onSelect, onClose }: ExamViewProp
 
         <div className="hidden lg:block">
           <div className="sticky top-6">
-            <Card className="flex flex-col h-[calc(100vh-9rem)] overflow-hidden border-2 border-slate-100 rounded-[2.5rem] bg-medical-surface shadow-xl">
+            <Card className="flex flex-col h-[calc(100vh-9rem)] overflow-hidden border-2 border-slate-100 rounded-2xl bg-medical-surface shadow-sm">
               {selected ? (
                 <ExamNote key={selected.id} topic={selected} {...noteProps} />
               ) : (
@@ -826,7 +826,7 @@ export default function ExamView({ selectedId, onSelect, onClose }: ExamViewProp
 
       {selected && (
         <div className="lg:hidden fixed inset-0 z-50 flex items-end justify-center bg-slate-900/60 backdrop-blur-sm">
-          <div className="bg-medical-surface w-full h-[92dvh] rounded-t-[2rem] shadow-2xl overflow-hidden flex flex-col pb-[env(safe-area-inset-bottom,0px)]">
+          <div className="bg-medical-surface w-full h-[92dvh] rounded-t-[2rem] shadow-sm overflow-hidden flex flex-col pb-[env(safe-area-inset-bottom,0px)]">
             <div className="w-12 h-1.5 bg-slate-300 rounded-full mx-auto mt-3 mb-1 shrink-0" />
             <button
               onClick={onClose}

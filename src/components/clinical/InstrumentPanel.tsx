@@ -90,7 +90,7 @@ function ClassificationPanel({ instrument }: { instrument: Instrument }) {
 
   return (
     <div className="space-y-6 text-left">
-      <div className="rounded-3xl md:rounded-[3rem] p-6 sm:p-8 bg-slate-900 text-white shadow-2xl relative overflow-hidden">
+      <div className="rounded-2xl md:rounded-2xl p-6 sm:p-8 bg-slate-900 text-white shadow-sm relative overflow-hidden">
         <div className="absolute top-0 right-0 w-48 h-48 bg-white/5 rounded-full -mr-24 -mt-24 blur-3xl" />
         <p className="text-[10px] font-black uppercase tracking-[0.3em] text-white/50 mb-3 relative z-10">{instrument.name}</p>
         <h3 className="text-xl md:text-3xl font-black italic tracking-tighter uppercase leading-tight relative z-10">
@@ -130,7 +130,7 @@ export function InstrumentPanel({ instrument }: { instrument: Instrument }) {
 /** Card wrapper used in the calculator page. */
 export function InstrumentCard({ instrument }: { instrument: Instrument }) {
   return (
-    <Card className="p-5 sm:p-6 md:p-8 bg-white border-2 border-slate-100 rounded-[2.5rem] shadow-sm">
+    <Card className="p-5 sm:p-6 md:p-8 bg-white border-2 border-slate-100 rounded-2xl shadow-sm">
       <InstrumentPanel instrument={instrument} />
     </Card>
   );

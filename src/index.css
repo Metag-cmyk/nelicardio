@@ -52,13 +52,13 @@
 }
 
 @layer components {
-  /* Android GPU optimized card blur */
+  /* Flat, dense elevated card */
   .glass-card {
-    @apply bg-white/90 backdrop-blur-md md:backdrop-blur-2xl border border-white/60 rounded-2xl md:rounded-[3rem] shadow-[0_10px_30px_rgba(0,0,0,0.04)] md:shadow-[0_25px_60px_rgba(0,0,0,0.06),0_10px_20px_rgba(0,0,0,0.02)] transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)];
+    @apply bg-white border border-slate-200/70 rounded-2xl shadow-sm transition-colors duration-200;
   }
 
   .btn-primary {
-    @apply bg-medical-accent text-white px-6 py-3 rounded-2xl font-black uppercase tracking-widest shadow-lg shadow-medical-accent/20 hover:shadow-medical-accent/40 focus:ring-2 focus:ring-medical-accent/50 transition-all active:scale-95 min-h-[44px];
+    @apply bg-medical-accent text-white px-5 py-2.5 rounded-xl font-black uppercase tracking-widest shadow-sm shadow-medical-accent/20 hover:shadow-medical-accent/40 focus:ring-2 focus:ring-medical-accent/50 transition-all active:scale-95 min-h-[44px];
   }
 
   /* Android Bottom Navigation Touch Item */

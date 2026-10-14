@@ -28,8 +28,8 @@ function GuidelineListCard({ guideline, active, onClick }: { guideline: Guidelin
     <Card
       onClick={onClick}
       className={cn(
-        'group p-5 bg-white border-2 transition-all duration-200 cursor-pointer rounded-2xl md:rounded-[1.75rem] flex flex-col h-full active:scale-[0.99]',
-        active ? 'border-medical-accent bg-slate-50 shadow-xl' : 'border-slate-100 hover:border-medical-accent/40',
+        'group p-5 bg-white border-2 transition-all duration-200 cursor-pointer rounded-2xl md:rounded-2xl flex flex-col h-full active:scale-[0.99]',
+        active ? 'border-medical-accent bg-slate-50 shadow-sm' : 'border-slate-100 hover:border-medical-accent/40',
       )}
     >
       <div className="flex items-center justify-between gap-2 mb-2">
@@ -181,7 +181,7 @@ export default function GuidelinesView({ selectedId, onSelect, onClose }: Guidel
 
         <div className="hidden lg:block">
           <div className="sticky top-6">
-            <Card className="flex flex-col h-[calc(100vh-9rem)] overflow-hidden border-2 border-slate-100 rounded-[2.5rem] bg-medical-surface shadow-xl">
+            <Card className="flex flex-col h-[calc(100vh-9rem)] overflow-hidden border-2 border-slate-100 rounded-2xl bg-medical-surface shadow-sm">
               {active ? (
                 <GuidelineDetail guideline={active} />
               ) : (
@@ -209,7 +209,7 @@ export default function GuidelinesView({ selectedId, onSelect, onClose }: Guidel
             <motion.div
               initial={{ y: '100%' }} animate={{ y: 0 }} exit={{ y: '100%' }}
               transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-              className="bg-medical-surface w-full h-[92dvh] rounded-t-[2rem] shadow-2xl overflow-hidden flex flex-col pb-[env(safe-area-inset-bottom,0px)]"
+              className="bg-medical-surface w-full h-[92dvh] rounded-t-[2rem] shadow-sm overflow-hidden flex flex-col pb-[env(safe-area-inset-bottom,0px)]"
             >
               <div className="w-12 h-1.5 bg-slate-300 rounded-full mx-auto mt-3 mb-1 shrink-0" />
               <button

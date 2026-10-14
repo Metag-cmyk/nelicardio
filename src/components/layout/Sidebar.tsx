@@ -21,9 +21,9 @@ export function Sidebar({ routeName, onNavigate }: SidebarProps) {
 
   return (
     <aside className="hidden md:flex flex-col w-64 xl:w-72 bg-medical-secondary border-r border-slate-200/60 fixed h-full left-0 top-0 z-50">
-      <div className="p-8 flex items-center gap-4">
-        <div className="w-12 h-12 bg-medical-accent rounded-2xl flex items-center justify-center shadow-2xl shadow-medical-accent/40 group transition-all duration-500 hover:rotate-12 heart-pulse">
-          <Heart className="w-7 h-7 text-white fill-white/20" />
+      <div className="p-6 flex items-center gap-4">
+        <div className="w-11 h-11 bg-medical-accent rounded-xl flex items-center justify-center shadow-sm shadow-medical-accent/40 group transition-all duration-500 hover:rotate-12 heart-pulse">
+          <Heart className="w-6 h-6 text-white fill-white/20" />
         </div>
         <div className="flex flex-col">
           <h1 className="text-2xl font-black tracking-tighter leading-none text-slate-900 italic">NeliCardio</h1>
@@ -31,7 +31,7 @@ export function Sidebar({ routeName, onNavigate }: SidebarProps) {
         </div>
       </div>
 
-      <nav className="flex-1 px-4 py-4 space-y-6 overflow-y-auto no-scrollbar" aria-label="Primary">
+      <nav className="flex-1 px-3 py-3 space-y-5 overflow-y-auto no-scrollbar" aria-label="Primary">
         {NAV_GROUPS.map((group) => {
           const items = NAV_ITEMS.filter((item) => item.group === group.id);
           if (items.length === 0) return null;
@@ -47,9 +47,9 @@ export function Sidebar({ routeName, onNavigate }: SidebarProps) {
                     onClick={() => onNavigate(item.id)}
                     aria-current={isActive ? 'page' : undefined}
                     className={cn(
-                      "w-full flex items-center gap-4 px-5 py-3.5 rounded-3xl text-xs font-black uppercase tracking-widest transition-all duration-300 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-medical-accent/50",
+                      "w-full flex items-center gap-3.5 px-4 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest transition-all duration-200 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-medical-accent/50",
                       isActive
-                        ? "bg-medical-accent text-white shadow-2xl shadow-medical-accent/30 translate-x-1"
+                        ? "bg-medical-accent text-white shadow-sm shadow-medical-accent/30"
                         : "text-slate-400 hover:text-slate-600 hover:bg-slate-50"
                     )}
                   >

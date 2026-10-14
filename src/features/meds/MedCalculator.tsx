@@ -113,7 +113,7 @@ export default function MedCalculator({ selectedId, onSelect, onClose }: MedCalc
 
         <div className="hidden lg:block">
           <div className="sticky top-6">
-            <Card className="flex flex-col h-[calc(100vh-9rem)] overflow-hidden border-2 border-slate-100 rounded-[2.5rem] bg-medical-surface shadow-xl">
+            <Card className="flex flex-col h-[calc(100vh-9rem)] overflow-hidden border-2 border-slate-100 rounded-2xl bg-medical-surface shadow-sm">
               {selected ? (
                 <MedicationDetailPanel key={selected.id} med={selected} onClose={onClose} inPane />
               ) : (
@@ -153,7 +153,7 @@ const MedCard = memo(({ med, isSelected, onSelect }: {
       <button
         onClick={onSelect}
         className={cn(
-          "bg-white border border-slate-200/60 p-4 flex flex-col justify-between group h-full relative overflow-hidden w-full transition-all duration-200 rounded-2xl md:rounded-[1.5rem] shadow-sm hover:shadow-md hover:border-slate-300 text-left active:scale-[0.98]",
+          "bg-white border border-slate-200/60 p-4 flex flex-col justify-between group h-full relative overflow-hidden w-full transition-all duration-200 rounded-2xl md:rounded-[1.5rem] shadow-sm hover:shadow-sm hover:border-slate-300 text-left active:scale-[0.98]",
           isSelected && "ring-1 ring-medical-accent border-transparent"
         )}
       >
@@ -226,7 +226,7 @@ function MedicationDetailPanel({ med, onClose, inPane = false }: { med: Medicati
                    <motion.div 
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: 'auto', opacity: 1 }}
-                      className="bg-rose-600 rounded-[2.5rem] p-8 text-white shadow-2xl shadow-rose-600/20 mb-10 overflow-hidden relative"
+                      className="bg-rose-600 rounded-2xl p-8 text-white shadow-sm shadow-rose-600/20 mb-10 overflow-hidden relative"
                    >
                       <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-3xl -mr-16 -mt-16" />
                       <div className="flex items-center gap-6 relative z-10">
@@ -252,7 +252,7 @@ function MedicationDetailPanel({ med, onClose, inPane = false }: { med: Medicati
 
               <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
                 <div className="md:col-span-12 lg:col-span-8 space-y-10">
-                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-8 bg-white border border-slate-100 rounded-[3rem] shadow-sm">
+                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-8 bg-white border border-slate-100 rounded-2xl shadow-sm">
                       <div className="space-y-4">
                          <div className="flex items-center gap-3 mb-6">
                             <Zap className="w-5 h-5 text-medical-accent" />
@@ -274,7 +274,7 @@ function MedicationDetailPanel({ med, onClose, inPane = false }: { med: Medicati
                       </div>
                    </div>
 
-                   <div className="p-8 bg-slate-900 rounded-[3rem] shadow-2xl border border-slate-800 relative overflow-hidden text-white">
+                   <div className="p-8 bg-slate-900 rounded-2xl shadow-sm border border-slate-800 relative overflow-hidden text-white">
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 relative z-10">
                          <div className="space-y-6">
                             <div className="flex items-center gap-3">
@@ -300,7 +300,7 @@ function MedicationDetailPanel({ med, onClose, inPane = false }: { med: Medicati
 
                 <div className="md:col-span-12 lg:col-span-4 space-y-10">
                    <div className={cn(
-                     "p-8 text-white rounded-[3rem] shadow-xl relative overflow-hidden group transition-all duration-700",
+                     "p-8 text-white rounded-2xl shadow-sm relative overflow-hidden group transition-all duration-700",
                      hasHyperkalemiaRisk || hasRenalRisk ? "bg-rose-900 border-2 border-rose-500 scale-105" : "bg-medical-accent"
                    )}>
                       <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16 blur-3xl" />
@@ -321,10 +321,10 @@ function MedicationDetailPanel({ med, onClose, inPane = false }: { med: Medicati
                    {med.dosingCalculatorType && (
                      <button 
                        onClick={() => setShowCalculator(true)}
-                       className="w-full p-6 bg-slate-900 border border-medical-accent/30 rounded-[2.5rem] flex items-center justify-between group hover:border-medical-accent transition-all duration-500 shadow-2xl"
+                       className="w-full p-6 bg-slate-900 border border-medical-accent/30 rounded-2xl flex items-center justify-between group hover:border-medical-accent transition-all duration-500 shadow-sm"
                      >
                         <div className="flex items-center gap-4 text-left">
-                           <div className="w-10 h-10 rounded-2xl bg-medical-accent flex items-center justify-center shadow-lg shadow-medical-accent/40 group-hover:scale-110 transition-transform">
+                           <div className="w-10 h-10 rounded-2xl bg-medical-accent flex items-center justify-center shadow-sm shadow-medical-accent/40 group-hover:scale-110 transition-transform">
                               <Calculator className="w-5 h-5 text-white" />
                            </div>
                            <div className="text-left">
@@ -379,7 +379,7 @@ function MedicationDetail({ med, onClose }: { med: Medication; onClose: () => vo
         animate={{ y: 0 }}
         exit={{ y: '100%' }}
         transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-        className="w-full h-[92dvh] md:h-auto md:max-h-[85vh] md:max-w-6xl bg-medical-surface rounded-t-[2rem] md:rounded-[3rem] relative overflow-hidden flex flex-col shadow-2xl z-10 overscroll-contain pb-[env(safe-area-inset-bottom,0px)]"
+        className="w-full h-[92dvh] md:h-auto md:max-h-[85vh] md:max-w-6xl bg-medical-surface rounded-t-[2rem] md:rounded-2xl relative overflow-hidden flex flex-col shadow-sm z-10 overscroll-contain pb-[env(safe-area-inset-bottom,0px)]"
       >
         <MedicationDetailPanel med={med} onClose={onClose} />
       </motion.div>

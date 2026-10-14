@@ -121,7 +121,7 @@ export default function DoseCalculator({
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           className={cn(
-            'p-8 rounded-[3rem] shadow-2xl relative overflow-hidden group',
+            'p-8 rounded-2xl shadow-sm relative overflow-hidden group',
             'contraindicated' in results && (results as DoseRecommendation).contraindicated ? 'bg-rose-600' : 'bg-medical-accent',
           )}
         >
@@ -175,7 +175,7 @@ function ProtocolBtn({ active, onClick, label }: { active: boolean, onClick: () 
       onClick={onClick}
       className={cn(
         'px-6 py-2.5 rounded-xl text-[9px] font-black uppercase tracking-widest transition-all',
-        active ? 'bg-medical-accent text-white shadow-lg' : 'text-slate-400 hover:text-white',
+        active ? 'bg-medical-accent text-white shadow-sm' : 'text-slate-400 hover:text-white',
       )}
     >
       {label}
