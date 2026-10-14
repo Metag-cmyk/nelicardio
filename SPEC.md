@@ -1557,6 +1557,30 @@ The only remaining `manirythm` strings in source are the intentional legacy-key 
 migration map. **Note:** the working-directory folder is still named `ManiRythm-main` — renaming it is a
 filesystem move that should be done outside the running session.
 
+---
+
+## 49. Web / desktop viewing redesign
+
+Verification: `tsc` clean, `npm test` 204 passing, `npm run lint` 0 problems, `npm run build` green;
+browser check confirms the shell renders.
+
+The app was mobile-first with a narrow centred column and large vertical padding, which felt cramped on
+wide screens. Changes for desktop comfort:
+
+| Area | Before | After |
+|---|---|---|
+| Content width | `max-w-6xl` (1152 px) | `max-w-[1600px]` (uses the screen) |
+| Side padding | `px-4 sm:px-6` | `px-4 sm:px-6 lg:px-10 2xl:px-12` |
+| Vertical padding | `md:py-16` (64 px) | `md:py-8 lg:py-10` |
+| Sidebar | `w-64` | `w-64 xl:w-72` (page offset follows) |
+| Reading type | `prose-clinical` 15 px | 16 px at ≥1024, 17 px at ≥1536; larger `label-clinical` |
+| Page header | `md:mb-12` | `md:mb-8` |
+| Study / Drugs | inner `max-w-5xl` | `max-w-6xl 2xl:max-w-7xl` |
+
+Master–detail views (Diagnose, Exam, Drugs, Guidelines) already split into two panes at `lg`, so the
+wider container lets the detail pane use the extra space.
+
+
 
 
 

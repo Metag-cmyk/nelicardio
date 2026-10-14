@@ -103,7 +103,7 @@ export default function StudyView() {
   };
 
   return (
-    <div className="space-y-6 md:space-y-10 pb-20 max-w-5xl mx-auto">
+    <div className="space-y-6 md:space-y-10 pb-20 max-w-6xl 2xl:max-w-7xl mx-auto">
       <PageHeader title="Study" subtitle="Active recall with spaced repetition" badge="Exam prep">
         <SocietyToggle />
       </PageHeader>

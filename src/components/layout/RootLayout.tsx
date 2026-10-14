@@ -15,7 +15,7 @@ interface RootLayoutProps {
 export function RootLayout({ route, isScrolled, onNavigate, children }: RootLayoutProps) {
   const { t } = useI18n();
   return (
-    <div className="min-h-screen bg-medical-surface text-slate-600 flex flex-col md:pl-64 font-sans max-w-[100vw] overflow-x-hidden selection:bg-medical-accent selection:text-white">
+    <div className="min-h-screen bg-medical-surface text-slate-600 flex flex-col md:pl-64 xl:pl-72 font-sans max-w-[100vw] overflow-x-hidden selection:bg-medical-accent selection:text-white">
       <a
         href="#main-content"
         className="sr-only focus:not-sr-only focus:absolute focus:left-3 focus:top-3 focus:z-[200] focus:rounded-xl focus:bg-medical-accent focus:px-4 focus:py-2 focus:text-xs focus:font-black focus:uppercase focus:tracking-wider focus:text-white"
@@ -31,7 +31,7 @@ export function RootLayout({ route, isScrolled, onNavigate, children }: RootLayo
         isScrolled={isScrolled} 
       />
 
-      <main id="main-content" className="flex-1 w-full max-w-6xl mx-auto px-4 py-4 pb-24 sm:px-6 md:py-16 md:pb-16">
+      <main id="main-content" className="flex-1 w-full max-w-[1600px] mx-auto px-4 py-4 pb-24 sm:px-6 lg:px-10 2xl:px-12 md:py-8 lg:py-10 md:pb-12">
         {children}
       </main>
 

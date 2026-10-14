@@ -20,7 +20,7 @@ export function Sidebar({ routeName, onNavigate }: SidebarProps) {
   const groupLabel = (id: string, fallback: string) => t(`group.${id}` as StringKey, fallback);
 
   return (
-    <aside className="hidden md:flex flex-col w-64 bg-medical-secondary border-r border-slate-200/60 fixed h-full left-0 top-0 z-50">
+    <aside className="hidden md:flex flex-col w-64 xl:w-72 bg-medical-secondary border-r border-slate-200/60 fixed h-full left-0 top-0 z-50">
       <div className="p-8 flex items-center gap-4">
         <div className="w-12 h-12 bg-medical-accent rounded-2xl flex items-center justify-center shadow-2xl shadow-medical-accent/40 group transition-all duration-500 hover:rotate-12 heart-pulse">
           <Heart className="w-7 h-7 text-white fill-white/20" />

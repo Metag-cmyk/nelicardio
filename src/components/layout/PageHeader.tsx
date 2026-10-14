@@ -13,7 +13,7 @@ interface PageHeaderProps {
 
 export function PageHeader({ title, subtitle, badge, badgeVariant = 'ghost', children, className }: PageHeaderProps) {
   return (
-    <div className={cn("flex flex-col md:flex-row md:items-center justify-between gap-4 md:gap-8 mb-6 md:mb-12", className)}>
+    <div className={cn("flex flex-col md:flex-row md:items-center justify-between gap-4 md:gap-8 mb-6 md:mb-8", className)}>
       <div className="space-y-1">
         {badge && (
           <Badge 

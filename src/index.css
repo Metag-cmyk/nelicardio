@@ -204,6 +204,15 @@
 .prose-clinical strong { @apply font-bold; color: #0f172a; }
 .dark .prose-clinical strong { color: #f8fafc; }
 
+/* Comfortable desktop reading scale (larger screens are read further away). */
+@media (min-width: 1024px) {
+  .prose-clinical { font-size: 16px; line-height: 1.7; }
+  .label-clinical { font-size: 11px; letter-spacing: 0.16em; }
+}
+@media (min-width: 1536px) {
+  .prose-clinical { font-size: 17px; }
+}
+
 .tabular-num {
   font-variant-numeric: tabular-nums;
   font-feature-settings: "tnum";

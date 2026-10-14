@@ -218,7 +218,7 @@ function MedicationDetailPanel({ med, onClose, inPane = false }: { med: Medicati
 
           <div className="flex-1 overflow-y-auto vertical-clinical-scroll px-4 py-5 md:px-10 md:py-8 no-scrollbar text-left">
             {/* ... content code ... */}
-            <div className="max-w-5xl mx-auto space-y-10">
+            <div className="max-w-6xl mx-auto space-y-10">
               
               {/* Biochemistry Safety Interlocks */}
               <AnimatePresence>
