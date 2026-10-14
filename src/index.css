@@ -49,6 +49,19 @@
   h1, h2, h3, h4, h5, h6 {
     @apply font-bold tracking-tight text-slate-900;
   }
+
+  /* Web affordances: pointer cursor on interactive elements + consistent focus ring. */
+  button:not(:disabled),
+  [role="button"],
+  a[href],
+  summary {
+    cursor: pointer;
+  }
+
+  :where(button, a[href], summary, [role="button"]):focus-visible {
+    outline: 2px solid rgb(244 63 94 / 0.7);
+    outline-offset: 2px;
+  }
 }
 
 @layer components {

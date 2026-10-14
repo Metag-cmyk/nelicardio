@@ -163,7 +163,7 @@ export default function GuidelinesView({ selectedId, onSelect, onClose }: Guidel
       </PageHeader>
 
       <div className="lg:grid lg:grid-cols-[minmax(320px,400px)_minmax(0,1fr)] lg:gap-8 lg:items-start">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-3 md:gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-3 md:gap-4 lg:sticky lg:top-6 lg:max-h-[calc(100vh-3rem)] lg:overflow-y-auto no-scrollbar lg:pr-1">
           {filtered.map((guideline) => (
             <GuidelineListCard
               key={guideline.id}
@@ -180,12 +180,12 @@ export default function GuidelinesView({ selectedId, onSelect, onClose }: Guidel
         </div>
 
         <div className="hidden lg:block">
-          <div className="sticky top-6">
-            <Card className="flex flex-col h-[calc(100vh-9rem)] overflow-hidden border-2 border-slate-100 rounded-2xl bg-medical-surface shadow-sm">
+          <div>
+            <Card className="flex flex-col min-h-[70vh] border-2 border-slate-100 rounded-2xl bg-medical-surface shadow-sm">
               {active ? (
                 <GuidelineDetail guideline={active} />
               ) : (
-                <div className="h-full flex flex-col items-center justify-center text-center p-10 gap-4">
+                <div className="flex flex-1 flex-col items-center justify-center text-center p-10 gap-4">
                   <div className="w-16 h-16 bg-slate-50 rounded-2xl flex items-center justify-center">
                     <BookOpen className="w-8 h-8 text-slate-300" />
                   </div>

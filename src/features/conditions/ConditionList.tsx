@@ -222,7 +222,7 @@ function GDMTSupport({ condition }: { condition: Condition }) {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
              {pillars.map((item, i) => (
-                <div key={i} className="p-5 bg-white/5 border border-white/10 rounded-[1.8rem] group hover:bg-white/10 transition-all">
+                <div key={i} className="p-5 bg-white/5 border border-white/10 rounded-2xl group hover:bg-white/10 transition-all">
                    <div className="flex justify-between items-center mb-3">
                       <span className="text-[11px] font-black text-white uppercase tracking-tight">{item.med}</span>
                       <Badge className={cn("text-[8px] font-black uppercase", GDMT_TONES[item.tone])}>
@@ -329,7 +329,7 @@ function ConditionDetail({
                      <Section title="Etiology & Risk Factors" icon={<Dna className="w-5 h-5" />} color="text-indigo-500">
                         <div className="grid grid-cols-1 gap-3">
                            {condition.etiology?.map((cause, i) => (
-                              <div key={i} className="flex items-center gap-4 p-5 bg-white border border-slate-100 rounded-[1.5rem] shadow-sm hover:border-indigo-200 transition-colors">
+                              <div key={i} className="flex items-center gap-4 p-5 bg-white border border-slate-100 rounded-2xl shadow-sm hover:border-indigo-200 transition-colors">
                                  <div className="w-2 h-2 rounded-full bg-indigo-500" />
                                  <span className="text-[11px] font-black uppercase tracking-widest text-slate-600">{cause}</span>
                               </div>
@@ -356,7 +356,7 @@ function ConditionDetail({
                            {(condition.diagnosticAlgorithm || condition.diagnosticCriteria).map((c, i) => (
                               <div key={i} className="flex gap-6 items-start">
                                  <div className="w-10 h-10 rounded-2xl bg-medical-accent/10 border border-medical-accent/20 flex items-center justify-center shrink-0 font-black text-xs text-medical-accent">{i+1}</div>
-                                 <Card className="p-6 bg-white border-2 border-slate-50 rounded-[1.5rem] shadow-sm flex-1">
+                                 <Card className="p-6 bg-white border-2 border-slate-50 rounded-2xl shadow-sm flex-1">
                                     <p className="prose-clinical">{c}</p>
                                  </Card>
                               </div>
@@ -501,7 +501,7 @@ function ConditionDetail({
 
 function EmptyDetailPane() {
   return (
-    <div className="h-full flex flex-col items-center justify-center text-center p-10 gap-4">
+    <div className="flex flex-1 flex-col items-center justify-center text-center p-10 gap-4">
       <div className="w-16 h-16 bg-slate-50 rounded-2xl flex items-center justify-center">
         <Stethoscope className="w-8 h-8 text-slate-300" />
       </div>
@@ -564,7 +564,7 @@ export default function ConditionList({ selectedId, onSelect, onClose }: Conditi
 
       <div className="lg:grid lg:grid-cols-[minmax(320px,400px)_minmax(0,1fr)] lg:gap-8 lg:items-start">
         {/* Left: filters + list */}
-        <div className="space-y-4">
+        <div className="space-y-4 lg:sticky lg:top-6 lg:max-h-[calc(100vh-3rem)] lg:overflow-y-auto no-scrollbar lg:pr-1">
           {/* Category Filter Bar - Horizontal swipe carousel on Android */}
           <div className="flex items-center gap-2 overflow-x-auto no-scrollbar py-1 -mx-4 px-4 sm:mx-0 sm:px-0">
             {[
@@ -631,8 +631,8 @@ export default function ConditionList({ selectedId, onSelect, onClose }: Conditi
 
         {/* Right: detail pane (desktop master–detail) */}
         <div className="hidden lg:block">
-          <div className="sticky top-6">
-            <Card className="flex flex-col h-[calc(100vh-9rem)] overflow-hidden border-2 border-slate-100 rounded-2xl bg-medical-surface shadow-sm">
+          <div>
+            <Card className="flex flex-col min-h-[70vh] border-2 border-slate-100 rounded-2xl bg-medical-surface shadow-sm">
               {activeCondition ? (
                 <ConditionDetail
                   key={activeCondition.id}

@@ -138,7 +138,7 @@ export default function LabsView() {
                                 <p className="text-[10px] md:text-[11px] font-black text-medical-accent uppercase tracking-wider">{abgAnalysis.compensation || 'Evaluating Secondary Response...'}</p>
                              </div>
                              {anionGap !== null && (abgAnalysis.primary.includes('Acidosis') || abgAnalysis.isGap) && (
-                                <div className="shrink-0 px-5 py-3 md:px-6 md:py-4 bg-slate-800 rounded-2xl md:rounded-[1.8rem] border border-slate-700 text-center shadow-sm">
+                                <div className="shrink-0 px-5 py-3 md:px-6 md:py-4 bg-slate-800 rounded-2xl md:rounded-2xl border border-slate-700 text-center shadow-sm">
                                    <p className="text-[8px] md:text-[9px] font-black text-slate-400 uppercase tracking-wider mb-0.5">Anion Gap Analytics</p>
                                    <div className={cn("text-xl md:text-2xl font-black italic", anionGap > CLINICAL_NORMALS.anionGap ? "text-rose-400" : "text-emerald-400")}>{anionGap}</div>
                                    <div className="flex flex-col mt-0.5">

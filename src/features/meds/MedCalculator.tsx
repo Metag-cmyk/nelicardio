@@ -71,7 +71,7 @@ export default function MedCalculator({ selectedId, onSelect, onClose }: MedCalc
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             icon={<Search className="w-5 h-5 text-slate-400 group-hover:text-medical-accent transition-colors" />}
-            className="h-12 md:h-14 text-base md:text-lg bg-white border-slate-200/60 focus:border-medical-accent/30 text-slate-900 rounded-2xl md:rounded-[1.5rem] transition-all duration-300 placeholder:text-slate-400 shadow-sm"
+            className="h-12 md:h-14 text-base md:text-lg bg-white border-slate-200/60 focus:border-medical-accent/30 text-slate-900 rounded-2xl md:rounded-2xl transition-all duration-300 placeholder:text-slate-400 shadow-sm"
           />
           <div className="absolute right-4 md:right-6 top-1/2 -translate-y-1/2">
             <Badge variant="ghost" size="xs" className="text-medical-accent font-black uppercase tracking-wider bg-medical-accent/5 border-medical-accent/10">{filteredMeds.length} Items</Badge>
@@ -79,7 +79,7 @@ export default function MedCalculator({ selectedId, onSelect, onClose }: MedCalc
         </div>
 
         {/* Category Filter */}
-        <div className="flex items-center gap-1.5 md:gap-2 p-1 bg-slate-100/60 rounded-2xl md:rounded-[1.8rem] w-full border border-slate-200/50 overflow-x-auto no-scrollbar -mx-4 px-4 sm:mx-0 sm:px-0">
+        <div className="flex items-center gap-1.5 md:gap-2 p-1 bg-slate-100/60 rounded-2xl md:rounded-2xl w-full border border-slate-200/50 overflow-x-auto no-scrollbar -mx-4 px-4 sm:mx-0 sm:px-0">
           {categories.map((cat) => (
             <button
               key={cat}
@@ -98,7 +98,7 @@ export default function MedCalculator({ selectedId, onSelect, onClose }: MedCalc
       </div>
 
       <div className="lg:grid lg:grid-cols-[minmax(320px,420px)_minmax(0,1fr)] lg:gap-6 lg:items-start">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-3 md:gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-3 md:gap-4 lg:sticky lg:top-6 lg:max-h-[calc(100vh-3rem)] lg:overflow-y-auto no-scrollbar lg:pr-1">
           <AnimatePresence mode="popLayout">
             {filteredMeds.map((med) => (
               <MedCard 
@@ -112,12 +112,12 @@ export default function MedCalculator({ selectedId, onSelect, onClose }: MedCalc
         </div>
 
         <div className="hidden lg:block">
-          <div className="sticky top-6">
-            <Card className="flex flex-col h-[calc(100vh-9rem)] overflow-hidden border-2 border-slate-100 rounded-2xl bg-medical-surface shadow-sm">
+          <div>
+            <Card className="flex flex-col min-h-[70vh] border-2 border-slate-100 rounded-2xl bg-medical-surface shadow-sm">
               {selected ? (
                 <MedicationDetailPanel key={selected.id} med={selected} onClose={onClose} inPane />
               ) : (
-                <div className="h-full flex flex-col items-center justify-center text-center p-10 gap-4">
+                <div className="flex flex-1 flex-col items-center justify-center text-center p-10 gap-4">
                   <div className="w-16 h-16 bg-slate-50 rounded-2xl flex items-center justify-center">
                     <Pill className="w-8 h-8 text-slate-300" />
                   </div>
@@ -153,7 +153,7 @@ const MedCard = memo(({ med, isSelected, onSelect }: {
       <button
         onClick={onSelect}
         className={cn(
-          "bg-white border border-slate-200/60 p-4 flex flex-col justify-between group h-full relative overflow-hidden w-full transition-all duration-200 rounded-2xl md:rounded-[1.5rem] shadow-sm hover:shadow-sm hover:border-slate-300 text-left active:scale-[0.98]",
+          "bg-white border border-slate-200/60 p-4 flex flex-col justify-between group h-full relative overflow-hidden w-full transition-all duration-200 rounded-2xl md:rounded-2xl shadow-sm hover:shadow-sm hover:border-slate-300 text-left active:scale-[0.98]",
           isSelected && "ring-1 ring-medical-accent border-transparent"
         )}
       >

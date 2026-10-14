@@ -28,7 +28,7 @@ export function ScoreDisplay({ score, label, interpretation, recommendation, col
 
   return (
     <div className={cn(
-      "rounded-2xl md:rounded-[4rem] p-6 sm:p-10 md:p-14 text-white text-center shadow-sm relative overflow-hidden mb-6 md:mb-12 border border-white/20 transition-all duration-700 group", 
+      "rounded-2xl md:rounded-2xl p-6 sm:p-10 md:p-14 text-white text-center shadow-sm relative overflow-hidden mb-6 md:mb-12 border border-white/20 transition-all duration-700 group", 
       colorMap[color]
     )}>
       <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full -mr-48 -mt-48 blur-[120px] pointer-events-none group-hover:scale-110 transition-transform duration-1000" />

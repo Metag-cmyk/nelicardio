@@ -754,7 +754,7 @@ export default function ExamView({ selectedId, onSelect, onClose }: ExamViewProp
       </Card>
 
       <div className="lg:grid lg:grid-cols-[minmax(300px,380px)_minmax(0,1fr)] lg:gap-8 lg:items-start">
-        <div className="space-y-4">
+        <div className="space-y-4 lg:sticky lg:top-6 lg:max-h-[calc(100vh-3rem)] lg:overflow-y-auto no-scrollbar lg:pr-1">
           <div className="relative">
             <Search className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
             <input
@@ -804,12 +804,12 @@ export default function ExamView({ selectedId, onSelect, onClose }: ExamViewProp
         </div>
 
         <div className="hidden lg:block">
-          <div className="sticky top-6">
-            <Card className="flex flex-col h-[calc(100vh-9rem)] overflow-hidden border-2 border-slate-100 rounded-2xl bg-medical-surface shadow-sm">
+          <div>
+            <Card className="flex flex-col min-h-[70vh] border-2 border-slate-100 rounded-2xl bg-medical-surface shadow-sm">
               {selected ? (
                 <ExamNote key={selected.id} topic={selected} {...noteProps} />
               ) : (
-                <div className="h-full flex flex-col items-center justify-center text-center p-10 gap-4">
+                <div className="flex flex-1 flex-col items-center justify-center text-center p-10 gap-4">
                   <div className="w-16 h-16 bg-slate-50 rounded-2xl flex items-center justify-center">
                     <ScrollText className="w-8 h-8 text-slate-300" />
                   </div>

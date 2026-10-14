@@ -1597,6 +1597,32 @@ look:
 | `.btn-primary` | `rounded-2xl`, `px-6 py-3` | `rounded-xl`, `px-5 py-2.5`, `shadow-sm` |
 | Sidebar | `p-8`, `py-3.5` rows, transl-x on active | `p-6`, `py-2.5` rows, flat active pill |
 
+---
+
+## 51. Natural page scroll + web affordances
+
+Verification: `tsc` clean, `npm test` 204 passing, `npm run lint` 0 problems, `npm run build` green;
+DOM check on `#/exam/bg-33` confirms `min-h-[70vh]` detail cards, no `h-[calc(100vh-9rem)]`, and the
+sticky scrollable list column.
+
+**Natural page scroll (item 3).** The four master–detail views (Exam, Diagnose, Drugs, Guidelines) no
+longer give the detail pane its own inner scrollbar:
+
+- Detail card: `flex flex-col h-[calc(100vh-9rem)] overflow-hidden` → `flex flex-col min-h-[70vh]`
+- Detail wrapper: removed `sticky top-6` (a sticky element taller than the viewport behaves badly)
+- Empty states: `h-full` → `flex flex-1`
+- The **list column** is now the sticky, independently scrollable one
+  (`lg:sticky lg:top-6 lg:max-h-[calc(100vh-3rem)] lg:overflow-y-auto no-scrollbar`), so it stays in
+  view while the page scrolls through the detail.
+
+**Web affordances (item 4).**
+
+- Global base rules: pointer cursor on `button` / `[role=button]` / `a[href]` / `summary`, and a
+  consistent `focus-visible` outline.
+- `Card` now adds `cursor-pointer` automatically when `onClick` is set.
+- Normalised the last odd radii (`1.5/1.8/3.5/4rem`) to `rounded-2xl`.
+
+
 
 
 

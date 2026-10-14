@@ -98,7 +98,7 @@ function Biochemistry() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
-        <Card className="p-5 sm:p-6 md:p-10 bg-white border border-slate-100 rounded-2xl md:rounded-[3.5rem] shadow-sm space-y-6 md:space-y-8">
+        <Card className="p-5 sm:p-6 md:p-10 bg-white border border-slate-100 rounded-2xl md:rounded-2xl shadow-sm space-y-6 md:space-y-8">
           <div className="flex items-center gap-2.5"><Ruler className="w-5 h-5 text-medical-accent" /><h5 className="text-[10px] md:text-[11px] font-black uppercase tracking-wider text-slate-400">Body Metrics</h5></div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-8">
             <Input label="Weight (kg)" type="number" value={weight} onChange={(e) => setWeight(e.target.value)} className="h-12 md:h-14 text-xl md:text-2xl font-black bg-slate-50 rounded-2xl" />
@@ -117,7 +117,7 @@ function Biochemistry() {
           </div>
         </Card>
 
-        <Card className="p-5 sm:p-6 md:p-10 bg-slate-900 text-white rounded-2xl md:rounded-[3.5rem] shadow-sm relative overflow-hidden">
+        <Card className="p-5 sm:p-6 md:p-10 bg-slate-900 text-white rounded-2xl md:rounded-2xl shadow-sm relative overflow-hidden">
           <div className="absolute top-0 right-0 w-64 h-64 bg-medical-accent/10 rounded-full blur-[80px] -mr-32 -mt-32" />
           <div className="flex items-center gap-2.5 mb-6 md:mb-10"><Droplets className="w-5 h-5 text-medical-accent" /><h5 className="text-[10px] md:text-[11px] font-black uppercase tracking-wider text-white/50">Diagnostic Markers</h5></div>
           <div className="space-y-6 md:space-y-8 relative z-10">
