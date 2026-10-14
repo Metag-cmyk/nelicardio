@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">NeliCardio</string>
+    <string name="title_activity_main">NeliCardio</string>
+    <string name="package_name">com.nelicardio.app</string>
+    <string name="custom_url_scheme">com.nelicardio.app</string>
+</resources>

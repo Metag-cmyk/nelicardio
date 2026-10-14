@@ -1,0 +1,8 @@
+{
+  "appId": "com.nelicardio.app",
+  "appName": "NeliCardio",
+  "webDir": "dist",
+  "server": {
+    "androidScheme": "https"
+  }
+}
